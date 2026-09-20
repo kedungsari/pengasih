@@ -138,6 +138,98 @@ h1,h2,h3{font-family:var(--font-display);color:var(--biru-tua);font-weight:700;l
 .rdk-btn .txt strong{display:block;color:var(--biru-tua);font-size:.98rem;font-weight:800;}
 .rdk-btn .txt span{font-size:.76rem;color:var(--ink-soft);font-weight:600;}
 
+/* ============ Pusat Tautan (dropdown) ============ */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.grp[hidden],.rdk-btn[hidden],.vcard[hidden],.vpane[hidden],.hub-empty[hidden],.vmodal[hidden]{display:none !important;}
+
+.hub-search{position:relative;max-width:520px;margin:0 auto 1rem;}
+.hub-search input{width:100%;padding:14px 46px 14px 50px;border:1.5px solid var(--garis);border-radius:100px;font:600 .96rem var(--font-body);color:var(--ink);background:var(--putih);transition:border-color .2s ease,box-shadow .2s ease;}
+.hub-search input::placeholder{color:var(--ink-soft);font-weight:500;}
+.hub-search input:focus{outline:none;border-color:var(--biru-muda);box-shadow:0 0 0 4px rgba(74,144,217,.18);}
+.hub-search .si{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--ink-soft);pointer-events:none;}
+.hub-search .clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:none;background:transparent;border-radius:50%;cursor:pointer;color:var(--ink-soft);font-size:1.4rem;line-height:1;display:none;}
+.hub-search .clear:hover{background:var(--krem);color:var(--biru-tua);}
+.hub-search.has-text .clear{display:block;}
+.hub-status{text-align:center;color:var(--ink-soft);font-size:.86rem;font-weight:600;min-height:1.4em;margin-bottom:.9rem;}
+.hub-empty{text-align:center;color:var(--ink-soft);font-weight:600;padding:28px 12px;}
+
+.hub-list{display:flex;flex-direction:column;gap:14px;max-width:940px;margin:0 auto;}
+.grp{background:var(--putih);border:1.5px solid var(--garis);border-radius:var(--radius-md);box-shadow:0 10px 26px -22px rgba(13,63,122,.45);scroll-margin-top:92px;transition:border-color .25s ease,box-shadow .25s ease;}
+.grp.open{border-color:var(--biru-muda);box-shadow:var(--shadow);}
+.grp-h{font-family:var(--font-body);font-size:1rem;line-height:1.3;margin:0;}
+.grp-head{width:100%;display:flex;align-items:center;gap:16px;padding:16px 20px;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-body);border-radius:var(--radius-md);color:inherit;}
+.grp-head:hover .chev{color:var(--biru);}
+.grp-head:focus-visible{outline:3px solid var(--emas);outline-offset:-3px;}
+.grp-ic{width:52px;height:52px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,var(--biru-tua),var(--biru));color:#fff;}
+.grp-ic img{width:100%;height:100%;}
+.grp-ic.rdk{background:#01010d;}
+.grp-ic.rdk img{object-fit:cover;object-position:center;}
+.grp-ic.uppka{background:var(--putih);border:1.5px solid var(--garis);padding:4px;}
+.grp-ic.uppka img{object-fit:contain;}
+.grp-txt{flex:1;min-width:0;}
+.grp-txt strong{display:block;font-family:var(--font-display);font-size:1.15rem;color:var(--biru-tua);font-weight:700;line-height:1.2;}
+.grp-txt small{display:block;color:var(--ink-soft);font-size:.82rem;font-weight:500;margin-top:2px;}
+.grp-count{flex-shrink:0;padding:4px 12px;border-radius:100px;background:var(--krem);color:var(--biru-tua);font-size:.78rem;font-weight:700;white-space:nowrap;}
+.chev{flex-shrink:0;display:flex;color:var(--ink-soft);transition:transform .3s ease,color .2s ease;}
+.grp.open .chev{transform:rotate(180deg);color:var(--biru);}
+
+.grp-panel{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .32s ease,visibility 0s linear .32s;}
+.grp.open .grp-panel{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .32s ease,visibility 0s;}
+.grp-inner{overflow:hidden;min-height:0;}
+.grp-body{padding:4px 20px 22px;border-top:1px solid var(--garis);margin:0 0;padding-top:20px;}
+a.rdk-btn .txt span.soon{color:var(--emas);}
+
+.vtabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.vtab{display:inline-flex;align-items:center;gap:8px;padding:8px 8px 8px 14px;border-radius:100px;border:1.5px solid var(--garis);background:var(--putih);color:var(--ink);font:700 .86rem var(--font-body);cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease;}
+.vtab:hover{border-color:var(--biru-muda);}
+.vtab:focus-visible{outline:3px solid var(--emas);outline-offset:2px;}
+.vtab .n{min-width:24px;padding:1px 8px;border-radius:100px;background:var(--krem);color:var(--ink-soft);font-size:.74rem;text-align:center;}
+.vtab.kosong{color:var(--ink-soft);}
+.vtab.active{background:linear-gradient(135deg,var(--biru-tua),var(--biru));border-color:transparent;color:#fff;}
+.vtab.active .n{background:rgba(255,255,255,.22);color:#fff;}
+
+.vpane{display:none;}
+.vpane.active{display:block;}
+.grp.searching .vpane{display:block;margin-bottom:18px;}
+.vpane-h{display:none;font-family:var(--font-body);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--biru);margin-bottom:10px;}
+.grp.searching .vpane-h{display:block;}
+.vkosong{color:var(--ink-soft);font-weight:600;padding:18px 4px;}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;}
+.vcard{display:flex;flex-direction:column;background:var(--krem);border:1.5px solid var(--garis);border-radius:var(--radius-sm);overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+.vcard:hover{transform:translateY(-4px);box-shadow:0 16px 30px -14px rgba(13,63,122,.35);border-color:var(--biru-muda);}
+.vcard:focus-visible{outline:3px solid var(--emas);outline-offset:2px;}
+.vthumb{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,var(--biru-tua),var(--biru));display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.vthumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.vplay{position:relative;width:48px;height:48px;border-radius:50%;background:rgba(13,63,122,.88);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 18px -6px rgba(0,0,0,.45);transition:transform .2s ease;}
+.vcard:hover .vplay{transform:scale(1.1);}
+.vmeta{padding:12px 14px 14px;}
+.vmeta strong{display:block;font-size:.94rem;line-height:1.35;color:var(--biru-tua);font-weight:700;}
+.vmeta span{display:block;margin-top:3px;font-size:.76rem;color:var(--ink-soft);font-weight:600;}
+
+.vmodal{position:fixed;inset:0;z-index:2000;background:rgba(7,20,40,.78);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:16px;}
+.vbox{width:min(960px,100%);background:var(--putih);border-radius:var(--radius-md);overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);}
+.vhead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 12px 12px 20px;}
+.vhead h3{font-family:var(--font-body);font-size:1rem;font-weight:700;color:var(--biru-tua);line-height:1.3;}
+.vclose{flex-shrink:0;width:38px;height:38px;border:none;border-radius:50%;background:var(--krem);color:var(--biru-tua);font-size:1.5rem;line-height:1;cursor:pointer;}
+.vclose:hover{background:var(--garis);}
+.vclose:focus-visible,.vfoot a:focus-visible{outline:3px solid var(--emas);outline-offset:2px;}
+.vframe{aspect-ratio:16/9;background:#000;}
+.vframe iframe{width:100%;height:100%;border:0;display:block;}
+.vfoot{padding:12px 20px;text-align:right;}
+.vfoot a{font-weight:700;font-size:.88rem;color:var(--biru);}
+.vfoot a:hover{text-decoration:underline;}
+
+@media (max-width:600px){
+  .grp-head{padding:14px;gap:12px;}
+  .grp-ic{width:44px;height:44px;border-radius:12px;}
+  .grp-count{display:none;}
+  .grp-body{padding:18px 14px 20px;}
+  .vgrid{grid-template-columns:1fr;}
+}
+@media (prefers-reduced-motion:reduce){
+  .grp-panel,.chev,.vcard,.vplay{transition:none;}
+}
+
 /* ============ Footer ============ */
 .site-footer{background:linear-gradient(160deg,#071e3d,var(--biru-tua) 55%,var(--biru) 100%);color:rgba(255,255,255,.85);padding:56px 0 26px;}
 .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.4rem;margin-bottom:2.2rem;}
@@ -195,6 +287,7 @@ h1,h2,h3{font-family:var(--font-display);color:var(--biru-tua);font-weight:700;l
       <li><a href="#tentang">Tentang</a></li>
       <li><a href="#padukuhan">Padukuhan RDK</a></li>
       <li><a href="#uppka">UPPKA</a></li>
+      <li><a href="#video">Video</a></li>
       <li><a href="#kontak">Kontak</a></li>
     </ul>
     <div class="nav-actions">
@@ -256,27 +349,23 @@ h1,h2,h3{font-family:var(--font-display);color:var(--biru-tua);font-weight:700;l
   </div>
 </section>
 
-<!-- ============ Padukuhan RDK (7 tombol) ============ -->
-<section class="jaringan" id="padukuhan">
+<!-- ============ Pusat Tautan: dropdown RDK, UPPKA, Video ============ -->
+<section class="jaringan" id="hub">
   <div class="container">
     <div class="section-head center">
-      <span class="eyebrow">Jaringan RDK</span>
-      <h2>Pilih Rumah Data Kependudukan Kalurahan</h2>
-      <p>Setiap kalurahan di Kapanewon Pengasih memiliki portal RDK masing-masing.</p>
+      <span class="eyebrow">Pusat Tautan</span>
+      <h2>Pilih Portal, Kelompok, dan Video Kalurahan</h2>
+      <p>Buka salah satu kelompok di bawah ini untuk melihat tautan yang tersedia, atau gunakan kolom pencarian.</p>
     </div>
-    <div class="rdk-grid" id="rdkGrid"></div>
-  </div>
-</section>
-
-<!-- ============ UPPKA (7 tombol) ============ -->
-<section class="jaringan uppka" id="uppka">
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow">Jaringan UPPKA</span>
-      <h2>Pilih Usaha Peningkatan Pendapatan Keluarga Akseptor Kalurahan</h2>
-      <p>Setiap kalurahan di Kapanewon Pengasih memiliki kelompok UPPKA masing-masing.</p>
+    <div class="hub-search" id="hubSearchBox">
+      <svg class="si" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label class="sr-only" for="hubSearch">Cari tautan atau video</label>
+      <input id="hubSearch" type="text" placeholder="Cari tautan atau video…" autocomplete="off" enterkeyhint="search">
+      <button type="button" class="clear" id="hubClear" aria-label="Hapus pencarian">×</button>
     </div>
-    <div class="rdk-grid" id="uppkaGrid"></div>
+    <p class="hub-status" id="hubStatus" role="status" aria-live="polite"></p>
+    <div class="hub-list" id="hubList"></div>
+    <p class="hub-empty" id="hubEmpty" hidden></p>
   </div>
 </section>
 
@@ -303,11 +392,24 @@ h1,h2,h3{font-family:var(--font-display);color:var(--biru-tua);font-weight:700;l
         <li><a href="#tentang">Tentang</a></li>
         <li><a href="#padukuhan">Padukuhan RDK</a></li>
         <li><a href="#uppka">UPPKA</a></li>
+        <li><a href="#video">Video</a></li>
       </ul>
     </div>
   </div>
   <p class="footer-bottom">&copy; <span id="year"></span> Rumah Data Kependudukan — Kapanewon Pengasih. Semua hak dilindungi.</p>
 </footer>
+
+<!-- Pemutar video (modal) -->
+<div class="vmodal" id="vmodal" hidden>
+  <div class="vbox" role="dialog" aria-modal="true" aria-labelledby="vTitle">
+    <div class="vhead">
+      <h3 id="vTitle"></h3>
+      <button type="button" class="vclose" id="vClose" aria-label="Tutup video">×</button>
+    </div>
+    <div class="vframe" id="vFrame"></div>
+    <div class="vfoot"><a id="vOpen" href="#" target="_blank" rel="noopener">Buka di tab baru ↗</a></div>
+  </div>
+</div>
 
 <div class="toast" id="toast"></div>
 
@@ -448,49 +550,346 @@ function showToast(msg){
   toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
 }
 
-/* ============ 7 Padukuhan RDK ============ */
-const RDK_ICON = 'https://kedungsari.github.io/pengasih/kapanewon/banner/logoRDK.jpeg';
-const RDK_LIST = [
-  { nama:'RDK Tawangsari',   link:'#' },
-  { nama:'RDK Karangsari',   link:'#' },
-  { nama:'RDK Kedungsari',   link:'#' },
-  { nama:'RDK Margosari',    link:'#' },
-  { nama:'RDK Pengasih',     link:'#' },
-  { nama:'RDK Sendangsari',  link:'#' },
-  { nama:'RDK Sidomulyo',    link:'#' },
+/* ============ PUSAT TAUTAN (dropdown) ==============================================
+   TEMPAT MENAMBAH / MENGUBAH TAUTAN — cukup edit array HUB_GROUPS di bawah ini.
+
+   • Menambah tautan  : tambahkan satu baris { nama:'...', link:'https://...' } di
+                        dalam items[] pada kelompok yang diinginkan.
+                        Isi link:'#' bila belum ada (tampil "Segera hadir").
+   • Menambah video   : tambahkan { judul:'Judul video', link:'https://youtu.be/...' }
+                        di dalam videos[] pada kalurahan yang diinginkan.
+                        Link YouTube & Google Drive diputar langsung di halaman;
+                        link lain (Facebook, TikTok, dll.) dibuka di tab baru.
+   • Kelompok baru    : salin salah satu objek kelompok (tipe:'link' atau 'video'),
+                        beri id yang unik, lalu tempel di urutan yang diinginkan.
+                        Urutan objek = urutan dropdown di halaman.
+   ================================================================================ */
+const RDK_ICON   = 'https://kedungsari.github.io/pengasih/kapanewon/banner/logoRDK.jpeg';
+const UPPKA_ICON = 'https://kedungsari.github.io/pengasih/kapanewon/banner/logoUPPKA.jpeg';
+
+const HUB_GROUPS = [
+  {
+    id: 'padukuhan',                      // id dipakai oleh menu (#padukuhan)
+    tipe: 'link',
+    judul: 'Jaringan RDK',
+    deskripsi: 'Portal Rumah Data Kependudukan tiap kalurahan',
+    ikon: { src: RDK_ICON, kelas: 'rdk' },
+    aksi: 'Buka portal →',
+    items: [
+      { nama:'RDK Tawangsari',  link:'#' },
+      { nama:'RDK Karangsari',  link:'#' },
+      { nama:'RDK Kedungsari',  link:'https://kedungsari.github.io/rumah-data' },
+      { nama:'RDK Margosari',   link:'#' },
+      { nama:'RDK Pengasih',    link:'https://kedungsari.github.io/pengasih' },
+      { nama:'RDK Sendangsari', link:'https://rumahdatasendangsari.id' },
+      { nama:'RDK Sidomulyo',   link:'#' },
+    ]
+  },
+  {
+    id: 'uppka',
+    tipe: 'link',
+    judul: 'Jaringan UPPKA',
+    deskripsi: 'Usaha Peningkatan Pendapatan Keluarga Akseptor tiap kalurahan',
+    ikon: { src: UPPKA_ICON, kelas: 'uppka' },
+    aksi: 'Buka portal →',
+    items: [
+      { nama:'UPPKA Tawangsari',  link:'#' },
+      { nama:'UPPKA Karangsari',  link:'#' },
+      { nama:'UPPKA Kedungsari',  link:'https://kedungsari.github.io/sritanjung' },
+      { nama:'UPPKA Margosari',   link:'#' },
+      { nama:'UPPKA Pengasih',    link:'#' },
+      { nama:'UPPKA Sendangsari', link:'#' },
+      { nama:'UPPKA Sidomulyo',   link:'#' },
+    ]
+  },
+  {
+    id: 'video',
+    tipe: 'video',
+    judul: 'Video RDK',
+    deskripsi: 'Video kegiatan dan panduan, dikelompokkan per kalurahan',
+    bagian: [
+      { nama:'Tawangsari',  videos:[] },
+      { nama:'Karangsari',  videos:[] },
+      { nama:'Kedungsari',  videos:[
+        { judul:'Video Kedungsari 1', link:'https://www.youtube.com/watch?v=ay6HP5t_wCI' },
+        { judul:'Video Kedungsari 2', link:'https://www.youtube.com/watch?v=MhJdGzrB3FQ' },
+        { judul:'Video Kedungsari 3', link:'https://www.youtube.com/watch?v=TvrtjrLE7os' },
+      ]},
+      { nama:'Margosari',   videos:[] },
+      { nama:'Pengasih',    videos:[] },
+      { nama:'Sendangsari', videos:[] },
+      { nama:'Sidomulyo',   videos:[] },
+    ]
+  },
 ];
-const rdkGrid = document.getElementById('rdkGrid');
-rdkGrid.innerHTML = RDK_LIST.map(r => `
-  <button class="rdk-btn" type="button" data-nama="${r.nama}">
-    <span class="ic ic-rdk"><img src="${RDK_ICON}" alt="" loading="lazy"></span>
-    <span class="txt"><strong>${r.nama}</strong><span>Buka portal →</span></span>
-  </button>
-`).join('');
-rdkGrid.querySelectorAll('.rdk-btn').forEach(btn => {
-  btn.addEventListener('click', () => showToast('🚧 ' + btn.dataset.nama + ' — akan segera hadir'));
+
+/* ---------- Pembantu ---------- */
+const $ = (sel, root = document) => root.querySelector(sel);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const isPlaceholder = l => !l || l === '#';
+const SVG_CHEV = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+const SVG_PLAY = '<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>';
+
+/* Kenali link video yang bisa diputar di halaman (YouTube & Google Drive) */
+function parseVideo(url){
+  try {
+    const u = new URL(url);
+    const host = u.hostname.replace(/^(www|m)\./, '');
+    let id = null;
+    if (host === 'youtu.be') {
+      id = u.pathname.slice(1).split('/')[0];
+    } else if (host.endsWith('youtube.com')) {
+      if (u.pathname === '/watch') id = u.searchParams.get('v');
+      else { const m = u.pathname.match(/^\/(?:shorts|embed|live|v)\/([\w-]{11})/); id = m && m[1]; }
+    }
+    if (id && /^[\w-]{11}$/.test(id)) {
+      return { tipe:'youtube', embed:`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`,
+               thumb:`https://i.ytimg.com/vi/${id}/mqdefault.jpg` };
+    }
+    if (host === 'drive.google.com') {
+      const m = u.pathname.match(/\/file\/d\/([\w-]+)/);
+      const fid = m ? m[1] : u.searchParams.get('id');
+      if (fid) return { tipe:'drive', embed:`https://drive.google.com/file/d/${fid}/preview`, thumb:'' };
+    }
+  } catch (e) { /* bukan URL valid → dibuka di tab baru */ }
+  return null;
+}
+
+/* ---------- Pembuat tampilan ---------- */
+function countOf(g){
+  return g.tipe === 'video' ? g.bagian.reduce((n, b) => n + b.videos.length, 0) : g.items.length;
+}
+
+function headIcon(g){
+  if (g.ikon && g.ikon.src) {
+    return `<span class="grp-ic ${esc(g.ikon.kelas || '')}"><img src="${esc(g.ikon.src)}" alt="" loading="lazy"></span>`;
+  }
+  return `<span class="grp-ic">${SVG_PLAY}</span>`;
+}
+
+function linkBody(g){
+  const kelasItem = g.ikon && g.ikon.kelas ? 'ic-' + g.ikon.kelas : '';
+  return `<div class="rdk-grid">` + g.items.map(it => {
+    const soon = isPlaceholder(it.link);
+    return `
+    <a class="rdk-btn" href="${soon ? '#' : esc(it.link)}"${soon ? ' data-soon' : ' target="_blank" rel="noopener"'} data-nama="${esc(it.nama)}" data-q="${esc((it.nama + ' ' + (it.ket || '')).toLowerCase())}">
+      <span class="ic ${kelasItem}"><img src="${esc(g.ikon.src)}" alt="" loading="lazy"></span>
+      <span class="txt"><strong>${esc(it.nama)}</strong><span${soon ? ' class="soon"' : ''}>${soon ? 'Segera hadir' : esc(g.aksi || 'Buka tautan →')}</span></span>
+    </a>`;
+  }).join('') + `</div>`;
+}
+
+function videoCard(v, b){
+  const soon = isPlaceholder(v.link);
+  const info = soon ? null : parseVideo(v.link);
+  const label = soon ? 'Segera hadir' : info ? (info.tipe === 'youtube' ? 'YouTube' : 'Google Drive') : 'Buka di tab baru';
+  const thumb = info && info.thumb ? `<img src="${esc(info.thumb)}" alt="" loading="lazy" onerror="this.remove()">` : '';
+  return `
+    <a class="vcard" href="${soon ? '#' : esc(v.link)}"${soon ? ' data-soon' : ' target="_blank" rel="noopener"'} data-judul="${esc(v.judul)}" data-kal="${esc(b.nama)}" data-q="${esc((v.judul + ' ' + b.nama + ' ' + (v.ket || '')).toLowerCase())}">
+      <span class="vthumb">${thumb}<span class="vplay">${SVG_PLAY}</span></span>
+      <span class="vmeta"><strong>${esc(v.judul)}</strong><span>${esc(b.nama)} · ${label}</span></span>
+    </a>`;
+}
+
+function videoBody(g){
+  const found = g.bagian.findIndex(b => b.videos.length);
+  const first = found < 0 ? 0 : found;
+  const tabs = g.bagian.map((b, i) => `
+    <button type="button" class="vtab${i === first ? ' active' : ''}${b.videos.length ? '' : ' kosong'}" data-pane="${i}" aria-pressed="${i === first}">${esc(b.nama)}<span class="n">${b.videos.length}</span></button>`).join('');
+  const panes = g.bagian.map((b, i) => `
+    <div class="vpane${i === first ? ' active' : ''}" data-pane="${i}">
+      <h4 class="vpane-h">${esc(b.nama)}</h4>
+      ${b.videos.length
+        ? `<div class="vgrid">${b.videos.map(v => videoCard(v, b)).join('')}</div>`
+        : `<p class="vkosong">Belum ada video untuk Kalurahan ${esc(b.nama)}.</p>`}
+    </div>`).join('');
+  return `<div class="vtabs" role="group" aria-label="Pilih kalurahan">${tabs}</div>${panes}`;
+}
+
+const hubList = $('#hubList');
+hubList.innerHTML = HUB_GROUPS.map(g => `
+  <article class="grp" id="${esc(g.id)}">
+    <h3 class="grp-h">
+      <button type="button" class="grp-head" aria-expanded="false" aria-controls="panel-${esc(g.id)}">
+        ${headIcon(g)}
+        <span class="grp-txt"><strong>${esc(g.judul)}</strong><small>${esc(g.deskripsi || '')}</small></span>
+        <span class="grp-count">${countOf(g)} ${g.tipe === 'video' ? 'video' : 'tautan'}</span>
+        <span class="chev">${SVG_CHEV}</span>
+      </button>
+    </h3>
+    <div class="grp-panel" id="panel-${esc(g.id)}">
+      <div class="grp-inner"><div class="grp-body">${g.tipe === 'video' ? videoBody(g) : linkBody(g)}</div></div>
+    </div>
+  </article>`).join('');
+
+/* ---------- Buka / tutup dropdown ---------- */
+const groups = [...hubList.querySelectorAll('.grp')];
+let searching = false;
+
+function setOpen(grp, open){
+  grp.classList.toggle('open', open);
+  $('.grp-head', grp).setAttribute('aria-expanded', String(open));
+}
+
+function openGroup(id, scroll){
+  const grp = document.getElementById(id);
+  if (!grp || !groups.includes(grp)) return false;
+  if (searching) clearSearch();
+  groups.forEach(x => setOpen(x, x === grp));
+  if (scroll) setTimeout(() => grp.scrollIntoView({ behavior:'smooth', block:'start' }), 340);
+  return true;
+}
+
+hubList.addEventListener('click', e => {
+  const head = e.target.closest('.grp-head');
+  if (head) {
+    const grp = head.closest('.grp');
+    const willOpen = !grp.classList.contains('open');
+    if (!searching) groups.forEach(x => { if (x !== grp) setOpen(x, false); });
+    setOpen(grp, willOpen);
+    return;
+  }
+  const tab = e.target.closest('.vtab');
+  if (tab) {
+    const grp = tab.closest('.grp');
+    grp.querySelectorAll('.vtab').forEach(t => {
+      const on = t === tab;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-pressed', String(on));
+    });
+    grp.querySelectorAll('.vpane').forEach(p => p.classList.toggle('active', p.dataset.pane === tab.dataset.pane));
+    return;
+  }
+  const soon = e.target.closest('[data-soon]');
+  if (soon) {
+    e.preventDefault();
+    showToast('🚧 ' + (soon.dataset.nama || soon.dataset.judul) + ' — akan segera hadir');
+    return;
+  }
+  const card = e.target.closest('.vcard');
+  if (card) {
+    const href = card.getAttribute('href');
+    const info = parseVideo(href);
+    if (info) {           // YouTube / Drive → putar di halaman
+      e.preventDefault();
+      openVideo(card.dataset.judul, href, info, card);
+    }                     // selain itu: biarkan terbuka di tab baru
+  }
 });
 
-/* ============ Jaringan UPPKA (7 tombol) ============ */
-const UPPKA_ICON = 'https://kedungsari.github.io/pengasih/kapanewon/banner/logoUPPKA.jpeg';
-const UPPKA_LIST = [
-  { nama:'UPPKA Tawangsari',   link:'#' },
-  { nama:'UPPKA Karangsari',   link:'#' },
-  { nama:'UPPKA Kedungsari',   link:'#' },
-  { nama:'UPPKA Margosari',    link:'#' },
-  { nama:'UPPKA Pengasih',     link:'#' },
-  { nama:'UPPKA Sendangsari',  link:'#' },
-  { nama:'UPPKA Sidomulyo',    link:'#' },
-];
-const uppkaGrid = document.getElementById('uppkaGrid');
-uppkaGrid.innerHTML = UPPKA_LIST.map(r => `
-  <button class="rdk-btn" type="button" data-nama="${r.nama}">
-    <span class="ic ic-uppka"><img src="${UPPKA_ICON}" alt="" loading="lazy"></span>
-    <span class="txt"><strong>${r.nama}</strong><span>Buka portal →</span></span>
-  </button>
-`).join('');
-uppkaGrid.querySelectorAll('.rdk-btn').forEach(btn => {
-  btn.addEventListener('click', () => showToast('🚧 ' + btn.dataset.nama + ' — akan segera hadir'));
+/* Menu atas & footer (#padukuhan, #uppka, #video) ikut membuka dropdown-nya */
+window.addEventListener('hashchange', () => openGroup(location.hash.slice(1), true));
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a || a.getAttribute('href').length < 2) return;
+  const id = a.getAttribute('href').slice(1);
+  if (location.hash === '#' + id) openGroup(id, true);   // hash sama → hashchange tidak terpicu
 });
+
+/* ---------- Pencarian ---------- */
+const searchInput = $('#hubSearch'), searchBox = $('#hubSearchBox');
+const statusEl = $('#hubStatus'), emptyEl = $('#hubEmpty');
+let openBefore = [];
+
+function clearSearch(){
+  searchInput.value = '';
+  applySearch();
+}
+
+function applySearch(){
+  const raw = searchInput.value.trim();
+  const q = raw.toLowerCase();
+  searchBox.classList.toggle('has-text', !!raw);
+
+  if (!q) {
+    if (searching) {
+      searching = false;
+      groups.forEach(g => {
+        g.classList.remove('searching');
+        g.hidden = false;
+        g.querySelectorAll('[data-q], .vpane').forEach(el => { el.hidden = false; });
+        setOpen(g, openBefore.includes(g.id));
+      });
+    }
+    statusEl.textContent = '';
+    emptyEl.hidden = true;
+    return;
+  }
+
+  if (!searching) {
+    searching = true;
+    openBefore = groups.filter(g => g.classList.contains('open')).map(g => g.id);
+  }
+  let total = 0;
+  groups.forEach(g => {
+    g.classList.add('searching');
+    const judulMatch = $('.grp-txt strong', g).textContent.toLowerCase().includes(q);
+    let n = 0;
+    g.querySelectorAll('[data-q]').forEach(el => {
+      const ok = judulMatch || el.dataset.q.includes(q);
+      el.hidden = !ok;
+      if (ok) n++;
+    });
+    g.querySelectorAll('.vpane').forEach(p => {
+      p.hidden = !p.querySelector('.vcard:not([hidden])');
+    });
+    g.hidden = n === 0;
+    setOpen(g, n > 0);
+    total += n;
+  });
+  statusEl.textContent = total ? `${total} hasil untuk “${raw}”` : '';
+  emptyEl.textContent = `Tidak ada tautan atau video yang cocok dengan “${raw}”.`;
+  emptyEl.hidden = total > 0;
+}
+
+searchInput.addEventListener('input', applySearch);
+searchInput.addEventListener('keydown', e => { if (e.key === 'Escape') clearSearch(); });
+$('#hubClear').addEventListener('click', () => { clearSearch(); searchInput.focus(); });
+
+/* ---------- Pemutar video (modal) ---------- */
+const vmodal = $('#vmodal'), vFrame = $('#vFrame'), vTitle = $('#vTitle');
+const vOpen = $('#vOpen'), vClose = $('#vClose');
+let lastFocus = null;
+
+function openVideo(judul, href, info, trigger){
+  lastFocus = trigger;
+  vTitle.textContent = judul;
+  vFrame.innerHTML = `<iframe src="${esc(info.embed)}" title="${esc(judul)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+  vOpen.href = href;
+  vOpen.textContent = info.tipe === 'youtube' ? 'Buka di YouTube ↗' : 'Buka di Google Drive ↗';
+  vmodal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  vClose.focus();
+}
+
+function closeVideo(){
+  if (vmodal.hidden) return;
+  vmodal.hidden = true;
+  vFrame.innerHTML = '';                 // hentikan video
+  document.body.style.overflow = '';
+  if (lastFocus) lastFocus.focus();
+}
+
+vClose.addEventListener('click', closeVideo);
+vmodal.addEventListener('click', e => { if (e.target === vmodal) closeVideo(); });
+document.addEventListener('keydown', e => {
+  if (vmodal.hidden) return;
+  if (e.key === 'Escape') { closeVideo(); return; }
+  if (e.key === 'Tab') {                 // jaga fokus tetap di dalam jendela video
+    const f = [vClose, vOpen];
+    const i = f.indexOf(document.activeElement);
+    e.preventDefault();
+    f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus();
+  }
+});
+
+/* ---------- Kondisi awal ---------- */
+(function init(){
+  const fromHash = location.hash.slice(1);
+  if (fromHash && groups.some(g => g.id === fromHash)) openGroup(fromHash, true);
+  else openGroup(groups[0].id, false);   // dropdown pertama terbuka
+})();
+
 </script>
 </body>
 </html>
